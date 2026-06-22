@@ -1,0 +1,67 @@
+{
+  "common": {
+    "appName": "Mission Pro",
+    "loading": "Loading...",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "back": "Back",
+    "next": "Next",
+    "or": "or",
+    "email": "Email",
+    "password": "Password",
+    "phone": "Phone number",
+    "name": "Full name"
+  },
+  "nav": {
+    "home": "Home",
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "dashboard": "Dashboard",
+    "profile": "Profile"
+  },
+  "home": {
+    "hero": "Find a qualified professional in minutes",
+    "subtitle": "Post your need — plumbing, electrical, masonry, mechanics — and get contacted by verified professionals near you.",
+    "ctaClient": "I need a professional",
+    "ctaPro": "I am a professional",
+    "howItWorks": "How it works",
+    "step1Title": "Describe your need",
+    "step1Desc": "Category, description, photos, location — in under 2 minutes.",
+    "step2Title": "Get matched",
+    "step2Desc": "Nearby qualified professionals are alerted instantly.",
+    "step3Title": "Choose & connect",
+    "step3Desc": "Review profiles, ratings, and pick the best fit."
+  },
+  "auth": {
+    "loginTitle": "Log in to your account",
+    "registerTitle": "Create your account",
+    "loginSubtitle": "Welcome back to Mission Pro",
+    "registerSubtitle": "Join the platform in seconds",
+    "googleLogin": "Continue with Google",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "role": "I am a...",
+    "roleClient": "Client (looking for a professional)",
+    "rolePro": "Professional (offering services)",
+    "category": "Specialty",
+    "forgotPassword": "Forgot password?",
+    "invalidCredentials": "Invalid email or password",
+    "emailInUse": "This email is already registered",
+    "serverError": "Something went wrong. Please try again.",
+    "registrationSuccess": "Account created! You can now log in."
+  },
+  "categories": {
+    "PLOMBERIE": "Plumbing",
+    "ELECTRICITE": "Electrical",
+    "MACONNERIE": "Masonry",
+    "MECANIQUE": "Mechanics",
+    "INGENIERIE": "Engineering",
+    "AUTRE": "Other"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "tagline": "Connecting clients with qualified professionals."
+  }
+}

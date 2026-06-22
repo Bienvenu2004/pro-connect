@@ -1,0 +1,67 @@
+{
+  "common": {
+    "appName": "Mission Pro",
+    "loading": "Chargement...",
+    "submit": "Envoyer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "back": "Retour",
+    "next": "Suivant",
+    "or": "ou",
+    "email": "Email",
+    "password": "Mot de passe",
+    "phone": "Numéro de téléphone",
+    "name": "Nom complet"
+  },
+  "nav": {
+    "home": "Accueil",
+    "login": "Se connecter",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "dashboard": "Tableau de bord",
+    "profile": "Profil"
+  },
+  "home": {
+    "hero": "Trouvez un professionnel qualifié en quelques minutes",
+    "subtitle": "Publiez votre besoin — plomberie, électricité, maçonnerie, mécanique — et soyez contacté par des professionnels vérifiés près de chez vous.",
+    "ctaClient": "J'ai besoin d'un professionnel",
+    "ctaPro": "Je suis un professionnel",
+    "howItWorks": "Comment ça marche",
+    "step1Title": "Décrivez votre besoin",
+    "step1Desc": "Catégorie, description, photos, localisation — en moins de 2 minutes.",
+    "step2Title": "Soyez mis en relation",
+    "step2Desc": "Les professionnels qualifiés à proximité sont alertés instantanément.",
+    "step3Title": "Choisissez & échangez",
+    "step3Desc": "Consultez les profils, les avis, et choisissez le meilleur."
+  },
+  "auth": {
+    "loginTitle": "Connectez-vous à votre compte",
+    "registerTitle": "Créez votre compte",
+    "loginSubtitle": "Bon retour sur Mission Pro",
+    "registerSubtitle": "Rejoignez la plateforme en quelques secondes",
+    "googleLogin": "Continuer avec Google",
+    "noAccount": "Pas encore de compte ?",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "role": "Je suis...",
+    "roleClient": "Client (je cherche un professionnel)",
+    "rolePro": "Professionnel (j'offre mes services)",
+    "category": "Spécialité",
+    "forgotPassword": "Mot de passe oublié ?",
+    "invalidCredentials": "Email ou mot de passe invalide",
+    "emailInUse": "Cet email est déjà utilisé",
+    "serverError": "Une erreur est survenue. Veuillez réessayer.",
+    "registrationSuccess": "Compte créé ! Vous pouvez maintenant vous connecter."
+  },
+  "categories": {
+    "PLOMBERIE": "Plomberie",
+    "ELECTRICITE": "Électricité",
+    "MACONNERIE": "Maçonnerie",
+    "MECANIQUE": "Mécanique",
+    "INGENIERIE": "Ingénierie",
+    "AUTRE": "Autre"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "tagline": "Mise en relation de clients avec des professionnels qualifiés."
+  }
+}

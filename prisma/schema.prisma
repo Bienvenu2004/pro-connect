@@ -1,0 +1,154 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  phone        String?
+  passwordHash String?
+  name         String
+  role         Role     @default(CLIENT)
+  createdAt    DateTime @default(now())
+  isActive     Boolean  @default(true)
+  image        String?
+
+  accounts            Account[]
+  clientProfile       ClientProfile?
+  professionalProfile ProfessionalProfile?
+  jobRequests         JobRequest[]  @relation("ClientJobRequests")
+  reviewsWritten      Review[]      @relation("ReviewAuthor")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+enum Role {
+  CLIENT
+  PROFESSIONAL
+  ADMIN
+}
+
+model ClientProfile {
+  id        String @id @default(cuid())
+  userId    String @unique
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  address   String?
+  latitude  Float?
+  longitude Float?
+}
+
+model ProfessionalProfile {
+  id                 String             @id @default(cuid())
+  userId             String             @unique
+  user               User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  category           JobCategory
+  bio                String?
+  isAvailable        Boolean            @default(true)
+  verificationStatus VerificationStatus @default(PENDING)
+  documents          Document[]
+  latitude           Float?
+  longitude          Float?
+  serviceRadiusKm    Int                @default(15)
+  contactedRequests  JobRequestContact[]
+  reviewsReceived    Review[]           @relation("ReviewTarget")
+}
+
+enum VerificationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model Document {
+  id         String              @id @default(cuid())
+  proId      String
+  pro        ProfessionalProfile @relation(fields: [proId], references: [id], onDelete: Cascade)
+  type       String
+  fileUrl    String
+  uploadedAt DateTime            @default(now())
+}
+
+enum JobCategory {
+  PLOMBERIE
+  ELECTRICITE
+  MACONNERIE
+  MECANIQUE
+  INGENIERIE
+  AUTRE
+}
+
+enum UrgencyLevel {
+  URGENT
+  PLANIFIE
+}
+
+model JobRequest {
+  id          String       @id @default(cuid())
+  clientId    String
+  client      User         @relation("ClientJobRequests", fields: [clientId], references: [id])
+  category    JobCategory
+  description String
+  urgency     UrgencyLevel
+  photos      String[]
+  address     String
+  latitude    Float
+  longitude   Float
+  status      JobStatus    @default(OPEN)
+  createdAt   DateTime     @default(now())
+  contacts    JobRequestContact[]
+  review      Review?
+}
+
+enum JobStatus {
+  OPEN
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+model JobRequestContact {
+  id           String              @id @default(cuid())
+  jobRequestId String
+  jobRequest   JobRequest          @relation(fields: [jobRequestId], references: [id])
+  proId        String
+  pro          ProfessionalProfile @relation(fields: [proId], references: [id])
+  message      String?
+  createdAt    DateTime            @default(now())
+
+  @@unique([jobRequestId, proId])
+}
+
+model Review {
+  id           String              @id @default(cuid())
+  jobRequestId String              @unique
+  jobRequest   JobRequest          @relation(fields: [jobRequestId], references: [id])
+  authorId     String
+  author       User                @relation("ReviewAuthor", fields: [authorId], references: [id])
+  targetProId  String
+  targetPro    ProfessionalProfile @relation("ReviewTarget", fields: [targetProId], references: [id])
+  rating       Int
+  comment      String?
+  createdAt    DateTime            @default(now())
+}
