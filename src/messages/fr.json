@@ -60,6 +60,50 @@
     "INGENIERIE": "Ingénierie",
     "AUTRE": "Autre"
   },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "welcomeBack": "Bon retour, {name}",
+    "noJobs": "Vous n'avez pas encore de demandes.",
+    "createJob": "Publier un besoin",
+    "myRequests": "Mes demandes",
+    "status": "Statut",
+    "category": "Catégorie",
+    "createdAt": "Créée le",
+    "contacts": "Contacts reçus",
+    "actions": "Actions"
+  },
+  "pro": {
+    "dashboard": "Espace professionnel",
+    "available": "Disponible",
+    "unavailable": "Indisponible",
+    "toggleAvailability": "Changer ma disponibilité",
+    "openRequests": "Demandes ouvertes",
+    "noRequests": "Aucune demande dans votre zone pour le moment.",
+    "contact": "Contacter le client",
+    "alreadyContacted": "Déjà contacté",
+    "pendingVerification": "Votre profil est en attente de vérification par un administrateur.",
+    "rejected": "Votre profil a été rejeté. Contactez le support."
+  },
+  "jobs": {
+    "statusOPEN": "Ouverte",
+    "statusIN_PROGRESS": "En cours",
+    "statusCOMPLETED": "Terminée",
+    "statusCANCELLED": "Annulée",
+    "markInProgress": "Marquer en cours",
+    "markCompleted": "Marquer terminée",
+    "markCancelled": "Annuler",
+    "urgentUrgent": "Urgent",
+    "urgentPlanifie": "Planifié"
+  },
+  "review": {
+    "title": "Laisser un avis",
+    "rating": "Note",
+    "comment": "Commentaire (optionnel)",
+    "submit": "Publier l'avis",
+    "alreadyReviewed": "Vous avez déjà évalué cette mission.",
+    "success": "Merci pour votre avis !",
+    "stars": "{count} étoile(s)"
+  },
   "footer": {
     "rights": "Tous droits réservés.",
     "tagline": "Mise en relation de clients avec des professionnels qualifiés."

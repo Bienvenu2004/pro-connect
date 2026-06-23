@@ -60,6 +60,50 @@
     "INGENIERIE": "Engineering",
     "AUTRE": "Other"
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcomeBack": "Welcome back, {name}",
+    "noJobs": "You have no requests yet.",
+    "createJob": "Post a request",
+    "myRequests": "My requests",
+    "status": "Status",
+    "category": "Category",
+    "createdAt": "Created on",
+    "contacts": "Contacts received",
+    "actions": "Actions"
+  },
+  "pro": {
+    "dashboard": "Professional Dashboard",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "toggleAvailability": "Toggle my availability",
+    "openRequests": "Open requests",
+    "noRequests": "No requests in your area at the moment.",
+    "contact": "Contact client",
+    "alreadyContacted": "Already contacted",
+    "pendingVerification": "Your profile is pending admin verification.",
+    "rejected": "Your profile was rejected. Contact support."
+  },
+  "jobs": {
+    "statusOPEN": "Open",
+    "statusIN_PROGRESS": "In progress",
+    "statusCOMPLETED": "Completed",
+    "statusCANCELLED": "Cancelled",
+    "markInProgress": "Mark in progress",
+    "markCompleted": "Mark completed",
+    "markCancelled": "Cancel",
+    "urgentUrgent": "Urgent",
+    "urgentPlanifie": "Planned"
+  },
+  "review": {
+    "title": "Leave a review",
+    "rating": "Rating",
+    "comment": "Comment (optional)",
+    "submit": "Submit review",
+    "alreadyReviewed": "You have already reviewed this job.",
+    "success": "Thank you for your review!",
+    "stars": "{count} star(s)"
+  },
   "footer": {
     "rights": "All rights reserved.",
     "tagline": "Connecting clients with qualified professionals."
