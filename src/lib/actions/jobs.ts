@@ -57,6 +57,7 @@ interface CreateJobInput {
 export async function createJobRequest(input: CreateJobInput) {
   const session = await auth();
   if (!session?.user) return { error: "unauthorized" };
+  if (session.user.role === "ADMIN") return { error: "unauthorized" };
 
   const { category, description, urgency, photos, address, latitude, longitude } = input;
 

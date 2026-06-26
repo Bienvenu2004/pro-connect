@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { useState, useRef } from "react";
+import { useSession } from "next-auth/react";
 import { createJobRequest } from "@/lib/actions/jobs";
 import dynamic from "next/dynamic";
 
@@ -20,6 +21,7 @@ const CATEGORIES = [
 export default function CreateJobPage() {
   const t = useTranslations();
   const router = useRouter();
+  const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -103,6 +105,11 @@ export default function CreateJobPage() {
       setSuccess(true);
       setTimeout(() => router.push("/dashboard"), 1500);
     }
+  }
+
+  if ((session?.user as any)?.role === "ADMIN") {
+    router.push("/admin");
+    return null;
   }
 
   if (success) {

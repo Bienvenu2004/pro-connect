@@ -1,4 +1,5 @@
 import { auth } from "@/lib/auth";
+import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { ClientDashboard } from "@/components/dashboard/client-dashboard";
 import { ProDashboard } from "@/components/dashboard/pro-dashboard";
@@ -23,6 +24,10 @@ function haversineDistance(
 export default async function DashboardPage() {
   const session = await auth();
   const { user } = session!;
+
+  if (user.role === "ADMIN") {
+    redirect("/admin");
+  }
 
   if (user.role === "PROFESSIONAL") {
     const profile = await prisma.professionalProfile.findUnique({
