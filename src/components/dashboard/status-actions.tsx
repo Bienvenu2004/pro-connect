@@ -28,12 +28,12 @@ export function StatusActions({
   }
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 flex-wrap">
       {currentStatus === "OPEN" && (
         <button
           onClick={() => handleStatusChange("IN_PROGRESS")}
           disabled={loading}
-          className="text-xs rounded bg-yellow-100 text-yellow-700 px-3 py-1 hover:bg-yellow-200 transition disabled:opacity-50"
+          className="text-xs rounded-lg bg-yellow-500/10 text-yellow-400 px-3 py-1.5 hover:bg-yellow-500/20 transition disabled:opacity-50"
         >
           {t("markInProgress")}
         </button>
@@ -42,7 +42,7 @@ export function StatusActions({
         <button
           onClick={() => handleStatusChange("COMPLETED")}
           disabled={loading}
-          className="text-xs rounded bg-green-100 text-green-700 px-3 py-1 hover:bg-green-200 transition disabled:opacity-50"
+          className="text-xs rounded-lg bg-green-500/10 text-green-400 px-3 py-1.5 hover:bg-green-500/20 transition disabled:opacity-50"
         >
           {t("markCompleted")}
         </button>
@@ -51,7 +51,7 @@ export function StatusActions({
         <button
           onClick={() => handleStatusChange("CANCELLED")}
           disabled={loading}
-          className="text-xs rounded bg-red-100 text-red-700 px-3 py-1 hover:bg-red-200 transition disabled:opacity-50"
+          className="text-xs rounded-lg bg-red-500/10 text-red-400 px-3 py-1.5 hover:bg-red-500/20 transition disabled:opacity-50"
         >
           {t("markCancelled")}
         </button>

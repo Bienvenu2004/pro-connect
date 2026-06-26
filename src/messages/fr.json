@@ -22,20 +22,31 @@
     "profile": "Profil"
   },
   "home": {
+    "tagline": "Plateforme de mise en relation",
     "hero": "Trouvez un professionnel qualifié en quelques minutes",
     "subtitle": "Publiez votre besoin — plomberie, électricité, maçonnerie, mécanique — et soyez contacté par des professionnels vérifiés près de chez vous.",
     "ctaClient": "J'ai besoin d'un professionnel",
     "ctaPro": "Je suis un professionnel",
     "howItWorks": "Comment ça marche",
+    "howItWorksLabel": "Processus simple",
+    "howItWorksSubtitle": "Un processus simple et rapide pour vous connecter au bon professionnel.",
+    "getStarted": "Commencer maintenant",
     "step1Title": "Décrivez votre besoin",
     "step1Desc": "Catégorie, description, photos, localisation — en moins de 2 minutes.",
     "step2Title": "Soyez mis en relation",
     "step2Desc": "Les professionnels qualifiés à proximité sont alertés instantanément.",
     "step3Title": "Choisissez & échangez",
-    "step3Desc": "Consultez les profils, les avis, et choisissez le meilleur."
+    "step3Desc": "Consultez les profils, les avis, et choisissez le meilleur.",
+    "trustedCategories": "Nos métiers",
+    "statPros": "Professionnels",
+    "statTime": "Temps moyen",
+    "statSatisfaction": "Satisfaction",
+    "statAvailability": "Disponibilité",
+    "ctaTitle": "Prêt à démarrer votre projet ?",
+    "ctaSubtitle": "Rejoignez des centaines de clients et professionnels qui utilisent Mission Pro chaque jour."
   },
   "auth": {
-    "loginTitle": "Connectez-vous à votre compte",
+    "loginTitle": "Connectez-vous",
     "registerTitle": "Créez votre compte",
     "loginSubtitle": "Bon retour sur Mission Pro",
     "registerSubtitle": "Rejoignez la plateforme en quelques secondes",
@@ -43,8 +54,10 @@
     "noAccount": "Pas encore de compte ?",
     "hasAccount": "Vous avez déjà un compte ?",
     "role": "Je suis...",
-    "roleClient": "Client (je cherche un professionnel)",
-    "rolePro": "Professionnel (j'offre mes services)",
+    "roleClient": "Client",
+    "roleClientDesc": "Je cherche un professionnel",
+    "rolePro": "Professionnel",
+    "roleProDesc": "J'offre mes services",
     "category": "Spécialité",
     "forgotPassword": "Mot de passe oublié ?",
     "invalidCredentials": "Email ou mot de passe invalide",
@@ -82,7 +95,8 @@
     "contact": "Contacter le client",
     "alreadyContacted": "Déjà contacté",
     "pendingVerification": "Votre profil est en attente de vérification par un administrateur.",
-    "rejected": "Votre profil a été rejeté. Contactez le support."
+    "rejected": "Votre profil a été rejeté. Contactez le support.",
+    "contactSuccess": "Le client a été notifié de votre intérêt."
   },
   "jobs": {
     "statusOPEN": "Ouverte",
@@ -93,7 +107,21 @@
     "markCompleted": "Marquer terminée",
     "markCancelled": "Annuler",
     "urgentUrgent": "Urgent",
-    "urgentPlanifie": "Planifié"
+    "urgentPlanifie": "Planifié",
+    "createTitle": "Publier un besoin",
+    "createSubtitle": "Décrivez votre problème pour être mis en relation avec les bons professionnels.",
+    "categoryLabel": "Catégorie de métier",
+    "descriptionLabel": "Description du problème",
+    "descriptionPlaceholder": "Décrivez votre besoin en détail...",
+    "urgencyLabel": "Niveau d'urgence",
+    "photosLabel": "Photos (max 5)",
+    "photosHint": "Ajoutez des photos pour aider les professionnels à mieux comprendre.",
+    "addressLabel": "Adresse",
+    "addressPlaceholder": "Entrez votre adresse...",
+    "geocodeButton": "Localiser sur la carte",
+    "submitJob": "Publier ma demande",
+    "success": "Demande publiée avec succès !",
+    "errorAddress": "Veuillez entrer une adresse valide et la localiser sur la carte."
   },
   "review": {
     "title": "Laisser un avis",
@@ -103,6 +131,18 @@
     "alreadyReviewed": "Vous avez déjà évalué cette mission.",
     "success": "Merci pour votre avis !",
     "stars": "{count} étoile(s)"
+  },
+  "admin": {
+    "title": "Administration",
+    "pendingPros": "Professionnels en attente",
+    "allUsers": "Utilisateurs",
+    "approve": "Approuver",
+    "reject": "Rejeter",
+    "block": "Bloquer",
+    "unblock": "Débloquer",
+    "noPending": "Aucun professionnel en attente de vérification.",
+    "documents": "Documents",
+    "viewDoc": "Voir le document"
   },
   "footer": {
     "rights": "Tous droits réservés.",

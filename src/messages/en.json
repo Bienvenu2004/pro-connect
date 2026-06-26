@@ -22,20 +22,31 @@
     "profile": "Profile"
   },
   "home": {
+    "tagline": "Professional matching platform",
     "hero": "Find a qualified professional in minutes",
     "subtitle": "Post your need — plumbing, electrical, masonry, mechanics — and get contacted by verified professionals near you.",
     "ctaClient": "I need a professional",
     "ctaPro": "I am a professional",
     "howItWorks": "How it works",
+    "howItWorksLabel": "Simple process",
+    "howItWorksSubtitle": "A simple and fast process to connect you with the right professional.",
+    "getStarted": "Get started",
     "step1Title": "Describe your need",
     "step1Desc": "Category, description, photos, location — in under 2 minutes.",
     "step2Title": "Get matched",
     "step2Desc": "Nearby qualified professionals are alerted instantly.",
     "step3Title": "Choose & connect",
-    "step3Desc": "Review profiles, ratings, and pick the best fit."
+    "step3Desc": "Review profiles, ratings, and pick the best fit.",
+    "trustedCategories": "Our trades",
+    "statPros": "Professionals",
+    "statTime": "Avg. time",
+    "statSatisfaction": "Satisfaction",
+    "statAvailability": "Availability",
+    "ctaTitle": "Ready to start your project?",
+    "ctaSubtitle": "Join hundreds of clients and professionals using Mission Pro every day."
   },
   "auth": {
-    "loginTitle": "Log in to your account",
+    "loginTitle": "Log in",
     "registerTitle": "Create your account",
     "loginSubtitle": "Welcome back to Mission Pro",
     "registerSubtitle": "Join the platform in seconds",
@@ -43,8 +54,10 @@
     "noAccount": "Don't have an account?",
     "hasAccount": "Already have an account?",
     "role": "I am a...",
-    "roleClient": "Client (looking for a professional)",
-    "rolePro": "Professional (offering services)",
+    "roleClient": "Client",
+    "roleClientDesc": "Looking for a professional",
+    "rolePro": "Professional",
+    "roleProDesc": "Offering my services",
     "category": "Specialty",
     "forgotPassword": "Forgot password?",
     "invalidCredentials": "Invalid email or password",
@@ -82,7 +95,8 @@
     "contact": "Contact client",
     "alreadyContacted": "Already contacted",
     "pendingVerification": "Your profile is pending admin verification.",
-    "rejected": "Your profile was rejected. Contact support."
+    "rejected": "Your profile was rejected. Contact support.",
+    "contactSuccess": "The client has been notified of your interest."
   },
   "jobs": {
     "statusOPEN": "Open",
@@ -93,7 +107,21 @@
     "markCompleted": "Mark completed",
     "markCancelled": "Cancel",
     "urgentUrgent": "Urgent",
-    "urgentPlanifie": "Planned"
+    "urgentPlanifie": "Planned",
+    "createTitle": "Post a request",
+    "createSubtitle": "Describe your problem to get matched with the right professionals.",
+    "categoryLabel": "Trade category",
+    "descriptionLabel": "Problem description",
+    "descriptionPlaceholder": "Describe your need in detail...",
+    "urgencyLabel": "Urgency level",
+    "photosLabel": "Photos (max 5)",
+    "photosHint": "Add photos to help professionals better understand.",
+    "addressLabel": "Address",
+    "addressPlaceholder": "Enter your address...",
+    "geocodeButton": "Locate on map",
+    "submitJob": "Post my request",
+    "success": "Request posted successfully!",
+    "errorAddress": "Please enter a valid address and locate it on the map."
   },
   "review": {
     "title": "Leave a review",
@@ -103,6 +131,18 @@
     "alreadyReviewed": "You have already reviewed this job.",
     "success": "Thank you for your review!",
     "stars": "{count} star(s)"
+  },
+  "admin": {
+    "title": "Administration",
+    "pendingPros": "Pending professionals",
+    "allUsers": "Users",
+    "approve": "Approve",
+    "reject": "Reject",
+    "block": "Block",
+    "unblock": "Unblock",
+    "noPending": "No professionals pending verification.",
+    "documents": "Documents",
+    "viewDoc": "View document"
   },
   "footer": {
     "rights": "All rights reserved.",

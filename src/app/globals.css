@@ -2,8 +2,23 @@
 
 @theme inline {
   --font-sans: var(--font-geist);
-  --color-primary: #2563eb;
-  --color-primary-dark: #1d4ed8;
-  --color-accent: #f97316;
-  --color-accent-dark: #ea580c;
+  --color-primary: #f97316;
+  --color-primary-dark: #ea580c;
+  --color-surface: #1a1a1a;
+  --color-surface-light: #2a2a2a;
+  --color-surface-lighter: #3a3a3a;
+  --color-border: #3a3a3a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #111111;
+  color: #f5f5f5;
+}
+
+input, select, textarea {
+  color-scheme: dark;
 }

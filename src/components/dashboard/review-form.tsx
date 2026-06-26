@@ -41,7 +41,7 @@ export function ReviewForm({
 
   if (done) {
     return (
-      <span className="text-xs text-green-600 font-medium">
+      <span className="text-xs text-green-400 font-medium">
         {t("success")}
       </span>
     );
@@ -51,7 +51,7 @@ export function ReviewForm({
     return (
       <button
         onClick={() => setOpen(true)}
-        className="text-xs rounded bg-orange-100 text-orange-700 px-3 py-1 hover:bg-orange-200 transition"
+        className="text-xs rounded-lg bg-orange-500/10 text-orange-400 px-3 py-1.5 hover:bg-orange-500/20 transition"
       >
         {t("title")}
       </button>
@@ -66,7 +66,7 @@ export function ReviewForm({
             key={star}
             type="button"
             onClick={() => setRating(star)}
-            className={`text-lg ${star <= rating ? "text-yellow-500" : "text-gray-300"} hover:text-yellow-400 transition`}
+            className={`text-lg ${star <= rating ? "text-yellow-500" : "text-gray-600"} hover:text-yellow-400 transition`}
           >
             ★
           </button>
@@ -77,12 +77,12 @@ export function ReviewForm({
         placeholder={t("comment")}
         value={comment}
         onChange={(e) => setComment(e.target.value)}
-        className="rounded border px-2 py-1 text-xs w-32"
+        className="rounded-lg border border-[#3a3a3a] bg-[#2a2a2a] px-2 py-1 text-xs text-white w-32 focus:border-orange-500 outline-none"
       />
       <button
         type="submit"
         disabled={loading || rating === 0}
-        className="text-xs rounded bg-orange-600 text-white px-3 py-1 hover:bg-orange-700 transition disabled:opacity-50"
+        className="text-xs rounded-lg bg-orange-500 text-white px-3 py-1.5 hover:bg-orange-600 transition disabled:opacity-50"
       >
         {t("submit")}
       </button>

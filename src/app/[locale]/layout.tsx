@@ -19,8 +19,9 @@ export default async function LocaleLayout({
       <NextIntlClientProvider messages={messages}>
         <Navbar />
         <main className="flex-1">{children}</main>
-        <footer className="border-t bg-white py-6 text-center text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Mission Pro</p>
+        <footer className="border-t border-[#2a2a2a] bg-[#0a0a0a] py-8 text-center text-sm text-gray-500">
+          <p className="font-semibold text-white mb-1">Mission Pro</p>
+          <p>&copy; {new Date().getFullYear()} Mission Pro. Tous droits réservés.</p>
         </footer>
       </NextIntlClientProvider>
     </SessionProvider>

@@ -3,10 +3,10 @@
 import { useTranslations } from "next-intl";
 
 const statusStyles: Record<string, string> = {
-  OPEN: "bg-blue-50 text-blue-700",
-  IN_PROGRESS: "bg-yellow-50 text-yellow-700",
-  COMPLETED: "bg-green-50 text-green-700",
-  CANCELLED: "bg-gray-100 text-gray-500",
+  OPEN: "bg-blue-500/10 text-blue-400",
+  IN_PROGRESS: "bg-yellow-500/10 text-yellow-400",
+  COMPLETED: "bg-green-500/10 text-green-400",
+  CANCELLED: "bg-gray-500/10 text-gray-400",
 };
 
 export function JobStatusBadge({ status }: { status: string }) {
@@ -14,7 +14,7 @@ export function JobStatusBadge({ status }: { status: string }) {
 
   return (
     <span
-      className={`text-xs font-medium px-2 py-0.5 rounded ${statusStyles[status] || "bg-gray-100 text-gray-600"}`}
+      className={`text-xs font-medium px-2.5 py-1 rounded-lg ${statusStyles[status] || "bg-gray-500/10 text-gray-400"}`}
     >
       {t(`status${status}`)}
     </span>
