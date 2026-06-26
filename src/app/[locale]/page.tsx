@@ -1,11 +1,23 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { auth } from "@/lib/auth";
 
-export default function HomePage() {
-  const t = useTranslations();
+export default async function HomePage() {
+  const session = await auth();
+  const isLoggedIn = !!session?.user;
 
   return (
     <div>
+      {isLoggedIn ? <LoggedInHome /> : <GuestHome />}
+    </div>
+  );
+}
+
+function GuestHome() {
+  const t = useTranslations();
+
+  return (
+    <>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-transparent to-transparent" />
@@ -91,21 +103,9 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="space-y-6">
-            <Step
-              number="01"
-              title={t("home.step1Title")}
-              desc={t("home.step1Desc")}
-            />
-            <Step
-              number="02"
-              title={t("home.step2Title")}
-              desc={t("home.step2Desc")}
-            />
-            <Step
-              number="03"
-              title={t("home.step3Title")}
-              desc={t("home.step3Desc")}
-            />
+            <Step number="01" title={t("home.step1Title")} desc={t("home.step1Desc")} />
+            <Step number="02" title={t("home.step2Title")} desc={t("home.step2Desc")} />
+            <Step number="03" title={t("home.step3Title")} desc={t("home.step3Desc")} />
           </div>
         </div>
       </section>
@@ -135,7 +135,141 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
+  );
+}
+
+function LoggedInHome() {
+  const t = useTranslations();
+
+  return (
+    <>
+      {/* Hero for logged-in users */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-6xl px-4 py-24 sm:py-32">
+          <div className="text-center max-w-3xl mx-auto">
+            <p className="text-orange-500 font-medium text-sm tracking-wide uppercase mb-4">
+              {t("home.tagline")}
+            </p>
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+              {t("homeLoggedIn.heroTitle")}
+            </h1>
+            <p className="mt-6 text-lg text-gray-400">
+              {t("homeLoggedIn.heroSubtitle")}
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/dashboard"
+                className="rounded-full bg-orange-500 px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-orange-500/25 hover:bg-orange-600 transition flex items-center justify-center gap-2"
+              >
+                {t("homeLoggedIn.goToDashboard")}
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How interactions work */}
+      <section className="border-t border-[#2a2a2a] bg-[#0d0d0d]">
+        <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="text-center mb-14">
+            <p className="text-orange-500 font-medium text-sm tracking-wide uppercase mb-3">
+              {t("homeLoggedIn.interactionsLabel")}
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
+              {t("homeLoggedIn.interactionsTitle")}
+            </h2>
+            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+              {t("homeLoggedIn.interactionsSubtitle")}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <InteractionStep
+              number="01"
+              title={t("homeLoggedIn.interaction1Title")}
+              desc={t("homeLoggedIn.interaction1Desc")}
+            />
+            <InteractionStep
+              number="02"
+              title={t("homeLoggedIn.interaction2Title")}
+              desc={t("homeLoggedIn.interaction2Desc")}
+            />
+            <InteractionStep
+              number="03"
+              title={t("homeLoggedIn.interaction3Title")}
+              desc={t("homeLoggedIn.interaction3Desc")}
+            />
+            <InteractionStep
+              number="04"
+              title={t("homeLoggedIn.interaction4Title")}
+              desc={t("homeLoggedIn.interaction4Desc")}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed explanation */}
+      <section className="mx-auto max-w-6xl px-4 py-20">
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Client side */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/10 text-orange-500 text-lg font-bold">C</span>
+              <h3 className="text-xl font-bold text-white">{t("homeLoggedIn.clientSideTitle")}</h3>
+            </div>
+            <ExplanationItem
+              title={t("homeLoggedIn.clientStep1Title")}
+              desc={t("homeLoggedIn.clientStep1Desc")}
+            />
+            <ExplanationItem
+              title={t("homeLoggedIn.clientStep2Title")}
+              desc={t("homeLoggedIn.clientStep2Desc")}
+            />
+            <ExplanationItem
+              title={t("homeLoggedIn.clientStep3Title")}
+              desc={t("homeLoggedIn.clientStep3Desc")}
+            />
+          </div>
+
+          {/* Professional side */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500/10 text-orange-500 text-lg font-bold">P</span>
+              <h3 className="text-xl font-bold text-white">{t("homeLoggedIn.proSideTitle")}</h3>
+            </div>
+            <ExplanationItem
+              title={t("homeLoggedIn.proStep1Title")}
+              desc={t("homeLoggedIn.proStep1Desc")}
+            />
+            <ExplanationItem
+              title={t("homeLoggedIn.proStep2Title")}
+              desc={t("homeLoggedIn.proStep2Desc")}
+            />
+            <ExplanationItem
+              title={t("homeLoggedIn.proStep3Title")}
+              desc={t("homeLoggedIn.proStep3Desc")}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="border-t border-[#2a2a2a]">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <StatCard number="500+" label={t("home.statPros")} />
+            <StatCard number="2min" label={t("home.statTime")} />
+            <StatCard number="98%" label={t("home.statSatisfaction")} />
+            <StatCard number="24/7" label={t("home.statAvailability")} />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -165,6 +299,27 @@ function Step({ number, title, desc }: { number: string; title: string; desc: st
         <h3 className="font-semibold text-white">{title}</h3>
         <p className="mt-1 text-sm text-gray-400">{desc}</p>
       </div>
+    </div>
+  );
+}
+
+function InteractionStep({ number, title, desc }: { number: string; title: string; desc: string }) {
+  return (
+    <div className="rounded-xl border border-[#2a2a2a] bg-[#1a1a1a] p-6 hover:border-orange-500/30 transition">
+      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-orange-500/10 text-orange-500 text-sm font-bold mb-4">
+        {number}
+      </span>
+      <h3 className="font-semibold text-white mb-2">{title}</h3>
+      <p className="text-sm text-gray-400">{desc}</p>
+    </div>
+  );
+}
+
+function ExplanationItem({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="rounded-lg border border-[#2a2a2a] bg-[#111] p-4">
+      <h4 className="font-medium text-white mb-1">{title}</h4>
+      <p className="text-sm text-gray-400">{desc}</p>
     </div>
   );
 }
